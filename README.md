@@ -1,57 +1,83 @@
 # URL Shortener
-**Description**
-A simple URL shortening service built with Spring Boot, Redis, PostgreSQL (AWS RDS), Docker, and rate limiting using Bucket4J.
 
-## Features
-- **Shorten URLs**: Converts long URLs into short URLs.
-- **Expiry Date**: URLs can be set to expire after a certain period.
-- **Caching**: Redis is used for caching to improve performance.
-- **Rate Limiting**: Implemented using Bucket4J to prevent abuse of the service.
-- **Dockerized**: The app is fully containerized using Docker and Docker Compose.
-- **AWS Deployment**: Hosted on an EC2 instance with an RDS PostgreSQL database.
+## 📌 Description
+A lightweight URL shortening service built with Spring Boot. It allows users to shorten long URLs, set expiration dates, and ensure efficient performance with caching and rate limiting. The service is **fully containerized** and **deployed on AWS** for scalability.
 
-## Getting Started
+## 🚀 Features
+- **Shorten URLs**: Converts long URLs into short, easy-to-share links.
+- **Expiry Date**: Set expiration times for shortened URLs.
+- **Caching**: Uses **Redis** to speed up lookups and reduce database load.
+- **Rate Limiting**: Implements **Bucket4J** to prevent abuse and excessive API calls.
+- **Dockerized**: Fully containerized with **Docker & Docker Compose** for easy deployment.
+- **AWS Deployment**: Hosted on an **EC2 instance** with an **RDS PostgreSQL** database.
 
-### Prerequisites
-- Docker
-- Docker Compose
-- Java 21
-- PostgreSQL (if not using AWS RDS)
-- Redis (if not using Docker for Redis)
-- Maven
+---
 
-### Local Setup
+## ⚙️ Getting Started
 
-1. Clone the repository:
+### **📌 Prerequisites**
+Ensure you have the following installed before running the application:
+- **Java 21**
+- **Maven 3.8.6+**
+- **Docker & Docker Compose**
+- **PostgreSQL** (if not using AWS RDS)
+- **Redis** (if not using Docker for Redis)
+
+---
+
+### **🛠️ Local Setup**
+1. **Clone the repository**  
    ```bash
    git clone https://github.com/dylanhu-code/url-shortener.git
-   cd url-shortener-app
+   cd url-shortener
    ```
    
-2. Create a .env file in the root directory with the following variables:
-   BASE_URL=http://localhost:8080/
-   DB_URL=jdbc:postgresql://localhost:5432/your_db_name
-   DB_USER=your_db_user
-   DB_PASS=your_db_password
+2. Create a .env file in the root directory with the following variables:  
+   BASE_URL=http://localhost:8080/  
+   DB_URL=jdbc:postgresql://localhost:5432/your_db_name  
+   DB_USER=your_db_user  
+   DB_PASS=your_db_password  
 
 3. Build and run the app using Docker Compose:
-4. ```bash
+   ```bash
    docker-compose up --build
    ```
-### AWS deployment
-For AWS deployment, follow these steps:
-1. Set up an EC2 instance with Docker installed.
-2. Set up an RDS PostgreSQL instance and configure the connection string in your .env file.
-3. Deploy the Docker containers to EC2.
 
-## Technologies Used
+4. Access the service:
+- Local: http://localhost:8080
+- Deployed (AWS EC2): http://your-ec2-ip/shorten
+   
+### **☁️ AWS deployment**
+For AWS deployment, follow these steps:
+1. Launch an EC2 instance (Ubuntu recommended) and SSH into it:
+   ```bash
+   ssh -i your-key.pem ubuntu@your-ec2-ip
+   ```
+2. Install Docker & Docker Compose on EC2:
+   ```bash
+   sudo apt update && sudo apt install docker.io -y
+   sudo systemctl enable docker
+   sudo apt install docker-compose -y
+   ```
+4. Set up an RDS PostgreSQL instance and configure the connection string in your .env file.
+5. Deploy the Docker container on EC2:
+   ```bash
+   git clone https://github.com/dylanhu-code/url-shortener.git
+   cd url-shortener
+   docker-compose up --build -d
+   ```
+
+
+## **🛠️Technologies Used**
 - Java 21
+- Spring Boot
 - Maven
 - Spring Boot
 - Redis (Caching)
 - PostgreSQL (AWS RDS)
 - Docker & Docker Compose
 - Bucket4J (Rate Limiting)
+- Lombok (Boilerplate Reduction)
 
-## License
+## **📜License**
 This project is licensed under the MIT License - see the LICENSE.md file for details.
