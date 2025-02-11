@@ -32,7 +32,7 @@ Ensure you have the following installed before running the application:
    cd url-shortener
    ```
    
-2. Create a .env file in the root directory with the following variables:  
+2. Fill the variables in the .env file in the root directory with the corresponding values:  
    BASE_URL=http://localhost:8080/  
    DB_URL=jdbc:postgresql://localhost:5432/your_db_name  
    DB_USER=your_db_user  
