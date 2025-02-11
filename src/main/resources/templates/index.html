@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .result h2 {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .result a {
+            display: block;
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+            word-wrap: break-word;
+        }
+
+        .result a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>URL Shortener</h1>
+
+    <!-- Form to submit the original URL -->
+    <form action="/shorten" method="POST">
+        <input type="text" name="url" placeholder="Enter URL to shorten" required>
+        <button type="submit">Shorten URL</button>
+    </form>
+
+    <!-- Display error message if rate limit is exceeded -->
+    <div class="error-message" th:if="${error != null}">
+        <p style="color: red; font-weight: bold;" th:text="${error}"></p>
+    </div>
+
+    <!-- Display the original and shortened URL (only if available) -->
+    <div class="result" th:if="${shortUrl != null}">
+        <h2>Original URL:</h2>
+        <p th:text="${originalUrl}"></p>
+
+        <h2>Shortened URL:</h2>
+        <a th:href="${shortUrl}" th:text="${shortUrl}"></a>
+    </div>
+</div>
+
+</body>
+</html>
