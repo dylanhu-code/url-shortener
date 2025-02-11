@@ -5,7 +5,6 @@ A lightweight URL shortening service built with Spring Boot. It allows users to 
 
 ## 🚀 Features
 - **Shorten URLs**: Converts long URLs into short, easy-to-share links.
-- **Expiry Date**: Set expiration times for shortened URLs.
 - **Caching**: Uses **Redis** to speed up lookups and reduce database load.
 - **Rate Limiting**: Implements **Bucket4J** to prevent abuse and excessive API calls.
 - **Dockerized**: Fully containerized with **Docker & Docker Compose** for easy deployment.
@@ -71,7 +70,7 @@ For AWS deployment, follow these steps:
 ## **🛠️Technologies Used**
 - **Backend:** Java 21, Spring Boot, Spring Web (REST API), Spring Data JPA
 - **Frontend:** HTML, CSS, Thymeleaf (for dynamic content rendering)
-- **Database:** PostgreSQL (AWS RDS)
+- **Database:** PostgreSQL (AWS RDS and EC2)
 - **Caching:** Redis
 - **Rate Limiting:** Bucket4J
 - **Containerization:** Docker & Docker Compose
