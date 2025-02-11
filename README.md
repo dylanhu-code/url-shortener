@@ -1,7 +1,7 @@
 # URL Shortener
 
 ## 📌 Description
-A lightweight URL shortening service built with Spring Boot. It allows users to shorten long URLs, set expiration dates, and ensure efficient performance with caching and rate limiting. The service is **fully containerized** and **deployed on AWS** for scalability.
+A lightweight URL shortening service built with Spring Boot. It allows users to shorten long URLs and ensures efficient performance with caching and rate limiting. The service is **fully containerized** and **deployed on AWS** for scalability.
 
 ## 🚀 Features
 - **Shorten URLs**: Converts long URLs into short, easy-to-share links.
