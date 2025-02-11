@@ -69,15 +69,14 @@ For AWS deployment, follow these steps:
 
 
 ## **🛠️Technologies Used**
-- Java 21
-- Spring Boot
-- Maven
-- Spring Boot
-- Redis (Caching)
-- PostgreSQL (AWS RDS)
-- Docker & Docker Compose
-- Bucket4J (Rate Limiting)
-- Lombok (Boilerplate Reduction)
+- **Backend:** Java 21, Spring Boot, Spring Web (REST API), Spring Data JPA
+- **Frontend:** HTML, CSS, Thymeleaf (for dynamic content rendering)
+- **Database:** PostgreSQL (AWS RDS)
+- **Caching:** Redis
+- **Rate Limiting:** Bucket4J
+- **Containerization:** Docker & Docker Compose
+- **Environment Variables Management:** dotenv-java
+
 
 ## **📜License**
 This project is licensed under the MIT License - see the LICENSE.md file for details.
